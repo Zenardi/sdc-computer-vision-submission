@@ -1,5 +1,26 @@
 # Object Detection in an Urban Environment — Experiment Summary
 
+- [Object Detection in an Urban Environment — Experiment Summary](#object-detection-in-an-urban-environment--experiment-summary)
+  - [Project Overview](#project-overview)
+  - [Experiments](#experiments)
+    - [Experiment 1 — SSD MobileNet v2 FPNLite 640×640](#experiment-1--ssd-mobilenet-v2-fpnlite-640640)
+    - [Experiment 2 — SSD ResNet50 v1 FPN 640×640](#experiment-2--ssd-resnet50-v1-fpn-640640)
+    - [Experiment 3 — EfficientDet D1 (SSD EfficientNet-B1 BiFPN 640×640)](#experiment-3--efficientdet-d1-ssd-efficientnet-b1-bifpn-640640)
+  - [Results Summary](#results-summary)
+  - [Analysis](#analysis)
+    - [Training Loss vs. Validation Loss](#training-loss-vs-validation-loss)
+    - [Did You Expect This Behavior?](#did-you-expect-this-behavior)
+  - [Recommended Model: SSD MobileNet v2 FPNLite 640×640](#recommended-model-ssd-mobilenet-v2-fpnlite-640640)
+  - [How to Further Improve Performance](#how-to-further-improve-performance)
+    - [1. Increase Training Steps Significantly](#1-increase-training-steps-significantly)
+    - [2. Enrich Data Augmentation](#2-enrich-data-augmentation)
+    - [3. Fix the ResNet Warmup Configuration](#3-fix-the-resnet-warmup-configuration)
+    - [4. Learning Rate Tuning](#4-learning-rate-tuning)
+    - [5. Add Per-Class Evaluation](#5-add-per-class-evaluation)
+    - [6. Consider Larger Input Resolution](#6-consider-larger-input-resolution)
+    - [7. Train EfficientDet D1 Longer with Evaluation](#7-train-efficientdet-d1-longer-with-evaluation)
+
+
 ## Project Overview
 
 This project trains object detection models using the [TensorFlow Object Detection API](https://tensorflow-object-detection-api-tutorial.readthedocs.io/) and AWS SageMaker on the [Waymo Open Dataset](https://waymo.com/open/) to detect **3 classes**: Vehicle, Pedestrian, and Cyclist.
